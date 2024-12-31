@@ -9,4 +9,4 @@ class SiteController {
     }
 }
 
-module.exports = new SiteController;
+export default new SiteController; 
