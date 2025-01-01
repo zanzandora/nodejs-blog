@@ -1,12 +1,19 @@
+import Article from '../../config/models/article.js';
 class SiteController {
-    index(req, res) {
-        res.render('home');
+  async index(req, res) {
+    try {
+      const Articles = await Article.find({});
+      res.json(Articles);
+    } catch (err) {
+      res.status(400).json({ error: 'error!' });
     }
-    
-    login(req, res) {
-        res.render('login');
+    // res.render('home');
+  }
 
-    }
+  login(req, res) {
+    res.render('login');
+  }
 }
 
-export default new SiteController; 
+export default new SiteController();
+//maiminhtu130803:K1fAp2EMayZm28RT
